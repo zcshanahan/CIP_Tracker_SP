@@ -715,6 +715,26 @@ tbody tr.is-new:hover { background: #fef3c7 !important; }
   text-transform: uppercase;
 }
 
+
+/* ── Lane filter chips ── */
+.lane-chip {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid var(--border);
+  background: var(--panel);
+  color: var(--text-dim);
+  transition: all 0.15s;
+}
+.lane-chip:hover { border-color: var(--accent); color: var(--accent); }
+.lane-chip.active { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+#laneWater.active   { border-color: #0284c7; background: #e0f2fe; color: #0284c7; }
+#laneWW.active      { border-color: #059669; background: #d1fae5; color: #059669; }
+#laneSystems.active { border-color: #d97706; background: #fef3c7; color: #d97706; }
+#laneEV.active      { border-color: #7c3aed; background: #ede9fe; color: #7c3aed; }
+
 /* Print */
 @media print {
   .controls, .stats-bar, .actions-row, header { display: none; }
@@ -735,73 +755,90 @@ tbody tr.is-new:hover { background: #fef3c7 !important; }
     <span class="report-badge" style="background:#374151;color:#d1d5db;">Data: Jan–Aug 2026 · 328 projects</span>
     <select class="name-selector" id="myNameSelect" onchange="setMyName(this.value)">
       <option value="">👤 I am…</option>
-  <option value="Doug Ashworth, PE">Doug Ashworth, PE</option>
-  <option value="Corrie Benekas">Corrie Benekas</option>
-  <option value="Amelia Benson">Amelia Benson</option>
-  <option value="Anthony Boston, PE">Anthony Boston, PE</option>
+<optgroup label="── View by Lane ──">
+  <option value="🌿 Environmental">🌿 Environmental projects</option>
+</optgroup>
+<optgroup label="── Leadership ──">
+  <option value="Jason Schaefer, PE">Jason Schaefer, PE</option>
+  <option value="Haley Morton, PE">Haley Morton, PE</option>
+  <option value="Brian Knadle, PE">Brian Knadle, PE</option>
+</optgroup>
+<optgroup label="── Water ──">
+  <option value="Nikole Rachelson, PE">Nikole Rachelson, PE</option>
+  <option value="Stephanie Espinoza, PE">Stephanie Espinoza, PE</option>
+  <option value="Julia Davis, PE">Julia Davis, PE</option>
   <option value="Casey Campo">Casey Campo</option>
-  <option value="Megan Carroll">Megan Carroll</option>
+  <option value="Lexi Markowitz">Lexi Markowitz</option>
+  <option value="Matthew Willis">Matthew Willis</option>
+  <option value="Katrina Mason">Katrina Mason</option>
+  <option value="Katelin Scheuerman">Katelin Scheuerman</option>
+  <option value="Moira Laughlin">Moira Laughlin</option>
+  <option value="Isabelle Harvey">Isabelle Harvey</option>
+  <option value="John Krise">John Krise</option>
+</optgroup>
+<optgroup label="── Wastewater ──">
+  <option value="Andrew Toth, PE">Andrew Toth, PE</option>
+  <option value="Andrew Hummel, PE">Andrew Hummel, PE</option>
+  <option value="Greg Woodward, PE">Greg Woodward, PE</option>
+  <option value="Tyler Robinson, PE">Tyler Robinson, PE</option>
+  <option value="Josh Lee, PE">Josh Lee, PE</option>
+  <option value="Conor Healy">Conor Healy</option>
+  <option value="Raegan Swartz">Raegan Swartz</option>
+  <option value="Sydney Rubin">Sydney Rubin</option>
+  <option value="Ryker McDaniel">Ryker McDaniel</option>
+  <option value="Kamryn Steel">Kamryn Steel</option>
+  <option value="Grady Cole">Grady Cole</option>
+  <option value="Brynn O'Donnell">Brynn O'Donnell</option>
+  <option value="Will Maccarone">Will Maccarone</option>
+  <option value="Sarah Sharp">Sarah Sharp</option>
+</optgroup>
+<optgroup label="── Systems ──">
+  <option value="Kyle LeBrasse, PE">Kyle LeBrasse, PE</option>
   <option value="Annie Cashon, PE">Annie Cashon, PE</option>
   <option value="Woosuk Cha, PE">Woosuk Cha, PE</option>
-  <option value="Grady Cole">Grady Cole</option>
-  <option value="Esme Conkright">Esme Conkright</option>
-  <option value="Shawn Dalglish, PE">Shawn Dalglish, PE</option>
-  <option value="Julia Davis, PE">Julia Davis, PE</option>
-  <option value="Keira Van Doren">Keira Van Doren</option>
-  <option value="McKenzie Elliott, PE">McKenzie Elliott, PE</option>
-  <option value="Stephanie Espinoza, PE">Stephanie Espinoza, PE</option>
   <option value="Ian Gallogly, PE">Ian Gallogly, PE</option>
-  <option value="Cole Grasma">Cole Grasma</option>
-  <option value="Clare Harris">Clare Harris</option>
-  <option value="Isabelle Harvey">Isabelle Harvey</option>
-  <option value="Conor Healy">Conor Healy</option>
-  <option value="Drew Holden">Drew Holden</option>
+  <option value="Doug Ashworth, PE">Doug Ashworth, PE</option>
   <option value="Brett Holzapfel, PE">Brett Holzapfel, PE</option>
-  <option value="Mark Hopkins, PE">Mark Hopkins, PE</option>
-  <option value="Aaron Hsu">Aaron Hsu</option>
-  <option value="Andrew Hummel, PE">Andrew Hummel, PE</option>
-  <option value="Rylee Jarmolych">Rylee Jarmolych</option>
-  <option value="Bryce Jones, PE">Bryce Jones, PE</option>
-  <option value="John Kienholz, PE">John Kienholz, PE</option>
-  <option value="Brian Knadle, PE">Brian Knadle, PE</option>
-  <option value="Chris Knodel, PE">Chris Knodel, PE</option>
-  <option value="John Krise">John Krise</option>
-  <option value="Nathan Krouss">Nathan Krouss</option>
-  <option value="Moira Laughlin">Moira Laughlin</option>
-  <option value="Kyle LeBrasse, PE">Kyle LeBrasse, PE</option>
-  <option value="Josh Lee, PE">Josh Lee, PE</option>
-  <option value="Will Maccarone">Will Maccarone</option>
-  <option value="Grace Marchand">Grace Marchand</option>
-  <option value="Lexi Markowitz">Lexi Markowitz</option>
-  <option value="Katrina Mason">Katrina Mason</option>
+  <option value="Corrie Benekas">Corrie Benekas</option>
   <option value="Emma Maytubby">Emma Maytubby</option>
-  <option value="Ryker McDaniel">Ryker McDaniel</option>
-  <option value="Alicia McDonald, PE">Alicia McDonald, PE</option>
-  <option value="Mike McMinimee">Mike McMinimee</option>
-  <option value="Lauren Merrifield">Lauren Merrifield</option>
-  <option value="Brandon Mimiaga">Brandon Mimiaga</option>
-  <option value="Adam Morroni">Adam Morroni</option>
-  <option value="Haley Morton, PE">Haley Morton, PE</option>
-  <option value="Brynn O'Donnell">Brynn O'Donnell</option>
-  <option value="David Olsen, PE">David Olsen, PE</option>
+  <option value="Grace Marchand">Grace Marchand</option>
+  <option value="Rylee Jarmolych">Rylee Jarmolych</option>
   <option value="Victor Ponce">Victor Ponce</option>
-  <option value="Brett Pugh, PE">Brett Pugh, PE</option>
-  <option value="Nikole Rachelson, PE">Nikole Rachelson, PE</option>
-  <option value="Tyler Robinson, PE">Tyler Robinson, PE</option>
-  <option value="Sydney Rubin">Sydney Rubin</option>
-  <option value="Jason Schaefer, PE">Jason Schaefer, PE</option>
-  <option value="Katelin Scheuerman">Katelin Scheuerman</option>
-  <option value="Sarah Sharp">Sarah Sharp</option>
-  <option value="Balaji Sivaramakrishnan, PE">Balaji Sivaramakrishnan, PE</option>
-  <option value="Kamryn Steel">Kamryn Steel</option>
-  <option value="Matthew Strobel">Matthew Strobel</option>
-  <option value="Raegan Swartz">Raegan Swartz</option>
-  <option value="Andrew Toth, PE">Andrew Toth, PE</option>
-  <option value="Holly Webb">Holly Webb</option>
   <option value="Kristie Weiss">Kristie Weiss</option>
-  <option value="Matthew Willis">Matthew Willis</option>
-  <option value="Greg Woodward, PE">Greg Woodward, PE</option>
+  <option value="Keira Van Doren">Keira Van Doren</option>
+</optgroup>
+<optgroup label="── Industrial ──">
+  <option value="Chris Knodel, PE">Chris Knodel, PE</option>
+  <option value="Brett Pugh, PE">Brett Pugh, PE</option>
+  <option value="Bryce Jones, PE">Bryce Jones, PE</option>
+  <option value="Holly Webb">Holly Webb</option>
+  <option value="Mike McMinimee">Mike McMinimee</option>
+  <option value="Esme Conkright">Esme Conkright</option>
+  <option value="Cole Grasma">Cole Grasma</option>
+  <option value="Lauren Merrifield">Lauren Merrifield</option>
+</optgroup>
+<optgroup label="── Operations / Structural ──">
   <option value="Jason Zemlicka, PE">Jason Zemlicka, PE</option>
+  <option value="John Kienholz, PE">John Kienholz, PE</option>
+  <option value="Shawn Dalglish, PE">Shawn Dalglish, PE</option>
+  <option value="Matthew Strobel">Matthew Strobel</option>
+  <option value="Clare Harris">Clare Harris</option>
+  <option value="Megan Carroll">Megan Carroll</option>
+  <option value="Balaji Sivaramakrishnan, PE">Balaji Sivaramakrishnan, PE</option>
+  <option value="Brandon Mimiaga">Brandon Mimiaga</option>
+  <option value="Nathan Krouss">Nathan Krouss</option>
+  <option value="Amelia Benson">Amelia Benson</option>
+</optgroup>
+<optgroup label="── Electrical/Mechanical ──">
+  <option value="Anthony Boston, PE">Anthony Boston, PE</option>
+  <option value="Mark Hopkins, PE">Mark Hopkins, PE</option>
+  <option value="Alicia McDonald, PE">Alicia McDonald, PE</option>
+  <option value="David Olsen, PE">David Olsen, PE</option>
+  <option value="McKenzie Elliott, PE">McKenzie Elliott, PE</option>
+  <option value="Aaron Hsu">Aaron Hsu</option>
+  <option value="Adam Morroni">Adam Morroni</option>
+  <option value="Drew Holden">Drew Holden</option>
+</optgroup>
     </select>
     <button class="my-projects-btn" id="myProjectsBtn" onclick="toggleMyProjects()">My Projects</button>
   </div>
@@ -821,6 +858,16 @@ tbody tr.is-new:hover { background: #fef3c7 !important; }
   <button class="wn-chip status-changed" id="wnUpdated" onclick="wnFilter('updated')">↺ Updated status <span id="wnUpdatedCount"></span></button>
   <button class="wn-chip active-now"     id="wnHot"     onclick="wnFilter('hot')">🔴 Newly hot <span id="wnHotCount"></span></button>
   <button class="wn-dismiss" onclick="wnFilter('none')">Show all</button>
+</div>
+
+<div style="background:#f8f9fb;border-bottom:1px solid var(--border);padding:8px 24px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+  <span style="font-size:11px;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.5px;">Business Lane:</span>
+  <button class="lane-chip" id="laneAll"     onclick="setLane('all')"        >All</button>
+  <button class="lane-chip" id="laneWater"   onclick="setLane('water')"      >💧 Drinking Water</button>
+  <button class="lane-chip" id="laneWW"      onclick="setLane('wastewater')" >🔄 Wastewater</button>
+  <button class="lane-chip" id="laneSystems" onclick="setLane('systems')"    >⚙️ Systems</button>
+  <button class="lane-chip" id="laneEV"      onclick="setLane('ev')"         >🌿 Environmental</button>
+  <span id="laneAutoNote" style="font-size:11px;color:var(--accent);margin-left:4px;display:none;">✓ Filtered to your lane — <button onclick="setLane('all')" style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:11px;text-decoration:underline;padding:0;">see all</button></span>
 </div>
 
 <div class="controls">
@@ -874,12 +921,8 @@ tbody tr.is-new:hover { background: #fef3c7 !important; }
   <div>
     <label><input type="checkbox" id="filterStarred" onchange="applyFilters()"> ★ Starred only</label>
   </div>
+  <button class="btn btn-ghost" id="showHiddenBtn" onclick="toggleShowHidden()" style="display:none;">👁 Show hidden</button>
   <button class="btn btn-ghost" onclick="clearFilters()">Clear</button>
-  <select id="showDismissedBtn" onchange="setDismissedView(this.value)" style="font-size:13px;padding:4px 8px;border:1px solid #d1d5db;border-radius:6px;background:#fff;cursor:pointer;color:#374151;">
-    <option value="active">Active Opportunities</option>
-    <option value="hidden">Hidden Opportunities</option>
-    <option value="all">All Opportunities</option>
-  </select>
   <button class="btn btn-primary" onclick="exportCSV()">⬇ Export CSV</button>
 </div>
 
@@ -963,73 +1006,73 @@ const PROJECTS = [{"id": 92112, "agency": "Metro Water Recovery", "project": "Al
 
 // ── Team members ──
 const TEAM_MEMBERS = [
-  "Jason Schaefer, PE",
-  "Haley Morton, PE",
-  "Nikole Rachelson, PE",
-  "Stephanie Espinoza, PE",
-  "Julia Davis, PE",
-  "Casey Campo",
-  "Lexi Markowitz",
-  "Matthew Willis",
-  "Katrina Mason",
-  "Katelin Scheuerman",
-  "Moira Laughlin",
-  "Isabelle Harvey",
-  "John Krise",
-  "Andrew Toth, PE",
+  "Alicia McDonald, PE",
   "Andrew Hummel, PE",
-  "Greg Woodward, PE",
-  "Tyler Robinson, PE",
-  "Josh Lee, PE",
-  "Conor Healy",
-  "Raegan Swartz",
-  "Sydney Rubin",
-  "Ryker McDaniel",
-  "Kamryn Steel",
-  "Grady Cole",
-  "Brynn O'Donnell",
-  "Will Maccarone",
-  "Sarah Sharp",
-  "Kyle LeBrasse, PE",
+  "Andrew Toth, PE",
   "Annie Cashon, PE",
-  "Woosuk Cha, PE",
-  "Ian Gallogly, PE",
-  "Doug Ashworth, PE",
-  "Brett Holzapfel, PE",
+  "Anthony Boston, PE",
+  "Balaji Sivaramakrishnan, PE",
   "Corrie Benekas",
-  "Emma Maytubby",
-  "Grace Marchand",
-  "Rylee Jarmolych",
-  "Victor Ponce",
-  "Kristie Weiss",
-  "Keira Van Doren",
-  "Chris Knodel, PE",
+  "Amelia Benson",
+  "Brett Holzapfel, PE",
   "Brett Pugh, PE",
-  "Bryce Jones, PE",
-  "Holly Webb",
-  "Mike McMinimee",
-  "Esme Conkright",
-  "Cole Grasma",
-  "Lauren Merrifield",
   "Brian Knadle, PE",
+  "Bryce Jones, PE",
+  "Casey Campo",
+  "Megan Carroll",
+  "Chris Knodel, PE",
+  "Grady Cole",
+  "Esme Conkright",
+  "David Olsen, PE",
+  "Keira Van Doren",
+  "Doug Ashworth, PE",
+  "Cole Grasma",
+  "Greg Woodward, PE",
+  "Haley Morton, PE",
+  "Clare Harris",
+  "Isabelle Harvey",
+  "Conor Healy",
+  "Drew Holden",
+  "Aaron Hsu",
+  "Ian Gallogly, PE",
+  "Rylee Jarmolych",
+  "Jason Schaefer, PE",
   "Jason Zemlicka, PE",
   "John Kienholz, PE",
-  "Shawn Dalglish, PE",
-  "Matthew Strobel",
-  "Clare Harris",
-  "Megan Carroll",
-  "Balaji Sivaramakrishnan, PE",
-  "Brandon Mimiaga",
+  "Josh Lee, PE",
+  "Julia Davis, PE",
+  "John Krise",
   "Nathan Krouss",
-  "Amelia Benson",
-  "Anthony Boston, PE",
+  "Kyle LeBrasse, PE",
+  "Moira Laughlin",
+  "Will Maccarone",
+  "Grace Marchand",
   "Mark Hopkins, PE",
-  "Alicia McDonald, PE",
-  "David Olsen, PE",
+  "Lexi Markowitz",
+  "Katrina Mason",
+  "Emma Maytubby",
+  "Ryker McDaniel",
   "McKenzie Elliott, PE",
-  "Aaron Hsu",
+  "Mike McMinimee",
+  "Lauren Merrifield",
+  "Brandon Mimiaga",
   "Adam Morroni",
-  "Drew Holden"
+  "Nikole Rachelson, PE",
+  "Brynn O'Donnell",
+  "Victor Ponce",
+  "Sydney Rubin",
+  "Katelin Scheuerman",
+  "Sarah Sharp",
+  "Shawn Dalglish, PE",
+  "Kamryn Steel",
+  "Stephanie Espinoza, PE",
+  "Matthew Strobel",
+  "Raegan Swartz",
+  "Tyler Robinson, PE",
+  "Holly Webb",
+  "Kristie Weiss",
+  "Matthew Willis",
+  "Woosuk Cha, PE"
 ];
 const TEAM_EMAILS = {
   "Jason Schaefer, PE": "jschaefer@burnsmcd.com",
@@ -1132,25 +1175,6 @@ const PA_CRM_URL  = '';    // ← Flow 3: CRM Lookup (coming soon)
 
 const _spDirty = new Set();
 let   _spSyncing = false;
-let dismissed = JSON.parse(localStorage.getItem('cip_dismissed') || '[]');
-let showDismissed = 'active';
-
-function dismissRow(id) {
-  if (!dismissed.includes(id)) dismissed.push(id);
-  localStorage.setItem('cip_dismissed', JSON.stringify(dismissed));
-  spSaveItem(id);   // syncs Dismissed=true to SharePoint for everyone
-  applyFilters();
-}
-function restoreRow(id) {
-  dismissed = dismissed.filter(d => d !== id);
-  localStorage.setItem('cip_dismissed', JSON.stringify(dismissed));
-  spSaveItem(id);   // syncs Dismissed=false to SharePoint for everyone
-  applyFilters();
-}
-function setDismissedView(val) {
-  showDismissed = val; // 'active', 'hidden', or 'all'
-  applyFilters();
-}
 
 async function spLoad() {
   if (!SP_ENABLED || !PA_LOAD_URL) return;
@@ -1169,10 +1193,7 @@ async function spLoad() {
       if (row.Owner  && row.Owner.trim())  owners[id] = row.Owner;
       if (row.Starred === true || row.Starred === 'true')
         if (!starred.includes(id)) starred.push(id);
-      if (row.Dismissed === true || row.Dismissed === 'true')
-        if (!dismissed.includes(id)) dismissed.push(id);
     });
-    localStorage.setItem('cip_dismissed', JSON.stringify(dismissed));
     showSpStatus('loaded');
     applyFilters();
   } catch (e) {
@@ -1198,7 +1219,6 @@ async function spSaveItem(id) {
         body: JSON.stringify({
           ProjectID: pid, Notes: notes[pid] || '',
           Owner: owners[pid] || '', Starred: starred.includes(pid),
-          Dismissed: dismissed.includes(pid),
           ModifiedBy: myName || 'CIP Tracker'
         })
       });
@@ -1256,7 +1276,13 @@ let currentOutreachId = null;
 function setMyName(name) {
   myName = name;
   localStorage.setItem('cip_myname', name);
-  applyFilters();
+  // Auto-set lane based on person's team, but only if user hasn't manually picked a lane
+  if (!laneSetByUser) {
+    const lane = getPersonLane(name);
+    setLane(lane, true); // true = auto, shows "filtered to your lane" note
+  } else {
+    applyFilters();
+  }
 }
 
 function toggleMyProjects() {
@@ -1372,6 +1398,80 @@ function copyOutreach() {
   });
 }
 
+
+// ── Business lane classification ──
+const WATER_IDS = new Set([94369, 94425, 94800, 94857, 95073, 95075, 95097, 95098, 95112, 95123, 95126, 95129, 95132, 95137, 95138, 95145, 94068, 94089, 94091, 94316, 84173, 85862, 86376, 86379, 89397, 89403, 89406, 89411, 89412, 89413, 89416, 89417, 89418, 89421, 89424, 89425, 91119, 91757, 92256, 92259, 92272, 92677, 93031, 93032, 93037, 93039, 93193, 93195, 93196, 93202, 93204, 93211, 93228, 93236, 93564, 93565, 93566, 93569, 93576, 93577, 93578, 93580, 93581, 93584, 93596, 93913, 93917, 93918, 94188, 94190, 94192, 94200, 94201, 94897, 94898, 94899, 94900, 94901, 94909, 94910, 94911, 94913, 94914, 94935, 94949, 94950, 94951, 94954, 94955, 94956, 94957, 94958, 94959, 94960, 94961, 94962, 94963, 95005, 95014, 95015, 95016, 95017, 95018, 95019, 95020, 95033, 95037, 95038, 95053, 95054, 95055, 95056, 95057, 95058, 94430, 94796, 94821, 94412, 94449, 94450, 94451, 94809, 68367, 81829, 81830, 87457, 87458, 88857, 88932, 90794, 91241, 91270, 91276, 91325, 91333, 91462, 91737, 91741, 91772, 92195, 92326, 92336, 92351, 92625, 92626, 93005, 93007, 93009, 93080, 93151, 93177, 93563, 93792, 93793, 93794, 93796, 93797, 93804, 93806, 93833, 93872, 93873, 93941, 93942, 93958, 93966, 93967, 94145, 94146, 94147, 94148, 94149, 94150, 94180, 94460, 94469, 94470, 94471, 94472, 94473, 94474, 94475, 94480, 94481, 94482, 94483, 94498, 94499, 94511, 94518, 94519, 94532, 94533, 94534, 94535, 94536, 94537, 94538, 94539, 94540, 94565, 94566, 94588, 94589, 94590, 94598, 94599, 94605, 94607, 94608, 94610, 94617, 94618, 94619, 94620, 94621, 94622, 94623, 94625, 94626, 94627, 94628, 94629, 94643, 94680, 94681, 94682, 94683, 94684, 94722]);
+const WASTEWATER_IDS = new Set([94425, 94800, 94828, 94830, 95097, 95112, 95126, 95132, 95138, 95151, 95152, 95153, 91127, 91128, 91134, 92267, 92269, 92272, 93048, 93199, 93596, 94902, 94904, 94905, 94906, 94933, 94936, 94937, 94941, 94952, 94953, 95006, 95031, 95032, 95035, 94430, 94821, 94827, 80304, 91238, 91241, 91270, 91695, 91696, 91738, 91742, 92133, 92196, 92326, 92351, 92941, 93005, 93007, 93009, 93012, 93016, 93151, 93772, 93796, 93812, 93874, 93958, 93971, 94460, 94484, 94485, 94486, 94487, 94502, 94503, 94504, 94505, 94506, 94517, 94525, 94526, 94527, 94528, 94529, 94530, 94531, 94547, 94591, 94592, 94593, 94594, 94595, 94604, 94609, 94718, 94722, 94757, 94758]);
+const SYSTEMS_IDS = new Set([92112, 94369, 94425, 94800, 94805, 94828, 94830, 94857, 95073, 95075, 95097, 95098, 95112, 95123, 95126, 95129, 95132, 95137, 95138, 95145, 95151, 95152, 95153, 94068, 94089, 94091, 94316, 94846, 94847, 95083, 84173, 85862, 86376, 86379, 89397, 89403, 89406, 89411, 89412, 89413, 89416, 89417, 89418, 89421, 89424, 89425, 91119, 91127, 91128, 91134, 91757, 92256, 92259, 92266, 92267, 92269, 92272, 92677, 93031, 93032, 93037, 93039, 93048, 93193, 93195, 93196, 93199, 93202, 93204, 93211, 93228, 93236, 93564, 93565, 93566, 93569, 93576, 93577, 93578, 93580, 93581, 93584, 93596, 93913, 93917, 93918, 94188, 94190, 94192, 94200, 94201, 94897, 94898, 94899, 94900, 94901, 94902, 94904, 94905, 94906, 94909, 94910, 94911, 94913, 94914, 94933, 94935, 94936, 94937, 94941, 94949, 94950, 94951, 94952, 94953, 94954, 94955, 94956, 94957, 94958, 94959, 94960, 94961, 94962, 94963, 95005, 95006, 95014, 95015, 95016, 95017, 95018, 95019, 95020, 95031, 95032, 95033, 95035, 95037, 95038, 95053, 95054, 95055, 95056, 95057, 95058, 94430, 94795, 94796, 94821, 94412, 94449, 94450, 94451, 94809, 94820, 94827, 68367, 80304, 81829, 81830, 87457, 87458, 88857, 88932, 90794, 91115, 91238, 91241, 91270, 91276, 91325, 91333, 91462, 91695, 91696, 91737, 91738, 91741, 91742, 91772, 92133, 92195, 92196, 92326, 92336, 92351, 92625, 92626, 92941, 93005, 93007, 93009, 93012, 93016, 93080, 93151, 93177, 93563, 93772, 93792, 93793, 93794, 93796, 93797, 93804, 93806, 93812, 93833, 93872, 93873, 93874, 93941, 93942, 93958, 93966, 93967, 93971, 94145, 94146, 94147, 94148, 94149, 94150, 94158, 94180, 94460, 94469, 94470, 94471, 94472, 94473, 94474, 94475, 94480, 94481, 94482, 94483, 94484, 94485, 94486, 94487, 94498, 94499, 94502, 94503, 94504, 94505, 94506, 94511, 94517, 94518, 94519, 94525, 94526, 94527, 94528, 94529, 94530, 94531, 94532, 94533, 94534, 94535, 94536, 94537, 94538, 94539, 94540, 94547, 94565, 94566, 94588, 94589, 94590, 94591, 94592, 94593, 94594, 94595, 94598, 94599, 94604, 94605, 94607, 94608, 94609, 94610, 94617, 94618, 94619, 94620, 94621, 94622, 94623, 94625, 94626, 94627, 94628, 94629, 94634, 94635, 94643, 94656, 94680, 94681, 94682, 94683, 94684, 94718, 94722, 94757, 94758]);
+const EV_IDS = new Set([94866, 94774, 94797, 86391, 94024, 94835, 94815, 92372, 94638, 95124]);
+const AUTO_HIDE_IDS = new Set([95076, 95095, 94154, 94156, 94157]);
+
+// Person → lane mapping
+// 'all' = sees everything (Systems, Leadership, no name)
+// 'water' = Nikole's team
+// 'wastewater' = Andrew's team
+// 'ev' = Environmental filter selection
+const WATER_TEAM = new Set([
+  'Nikole Rachelson, PE','Stephanie Espinoza, PE','Julia Davis, PE','Casey Campo',
+  'Lexi Markowitz','Matthew Willis','Katrina Mason','Katelin Scheuerman',
+  'Moira Laughlin','Isabelle Harvey','John Krise'
+]);
+const WASTEWATER_TEAM = new Set([
+  'Andrew Toth, PE','Andrew Hummel, PE','Greg Woodward, PE','Tyler Robinson, PE',
+  'Josh Lee, PE','Conor Healy','Raegan Swartz','Sydney Rubin','Ryker McDaniel',
+  'Kamryn Steel','Grady Cole',"Brynn O'Donnell",'Will Maccarone','Sarah Sharp'
+]);
+
+const LEADERSHIP = new Set(['Jason Schaefer, PE','Haley Morton, PE','Brian Knadle, PE']);
+function getPersonLane(name) {
+  if (!name || name === '') return 'all';
+  if (name === '🌿 Environmental') return 'ev';
+  if (LEADERSHIP.has(name)) return 'all';
+  if (WATER_TEAM.has(name)) return 'water';
+  if (WASTEWATER_TEAM.has(name)) return 'wastewater';
+  return 'systems';
+}
+
+function projectMatchesLane(p, lane) {
+  if (lane === 'all') return true;
+  if (lane === 'water') return WATER_IDS.has(p.id);
+  if (lane === 'wastewater') return WASTEWATER_IDS.has(p.id);
+  if (lane === 'systems') return SYSTEMS_IDS.has(p.id);
+  if (lane === 'ev') return EV_IDS.has(p.id);
+  return true;
+}
+
+// ── Hidden / dismissed projects ──
+let hiddenIds = new Set(JSON.parse(localStorage.getItem('cip_hidden') || '[]'));
+
+let showingHidden = false;
+
+function toggleShowHidden() {
+  showingHidden = !showingHidden;
+  const btn = document.getElementById('showHiddenBtn');
+  btn.textContent = showingHidden ? '👁 Hide dismissed' : '👁 Show hidden';
+  applyFilters();
+}
+
+function hideProject(id) {
+  hiddenIds.add(id);
+  localStorage.setItem('cip_hidden', JSON.stringify([...hiddenIds]));
+  applyFilters();
+}
+
+function unhideAll() {
+  hiddenIds.clear();
+  localStorage.setItem('cip_hidden', '[]');
+  document.getElementById('showHiddenBtn').style.display = 'none';
+  showingHidden = false;
+  laneSetByUser = false;
+  setLane('all');
+  applyFilters();
+}
+
+// ── Client agencies (excluded from agency dropdown) ──
+const CLIENT_AGENCIES = new Set(['Arvada', 'Aspen', 'Aurora', 'Boulder', 'Breckenridge', 'Castle Rock', 'Clifton Water District', 'Colorado Springs', 'Crested Butte', 'Denver', 'Erie', 'Estes Park', 'Evans', 'Fort Collins', 'Fort Lupton', 'Frisco', 'Fruita', 'Golden', 'Grand Junction', 'Greeley', 'Lafayette', 'Little Thompson Water District', 'Longmont', 'Loveland', 'Metro Water Recovery', 'Rifle', 'Sheridan', 'Silverthorne', 'Steamboat Springs', 'Westminster', 'Windsor']);
+
 // CRM contact intelligence (from Active Contacts 09/28/2026)
 // cipContact = the named contact in the CIP report
 // crmContacts = our internal contacts at that agency
@@ -1422,6 +1522,11 @@ function renderStats(data) {
   const watch = data.filter(p => p.priority === 'watch').length;
   const pipeline = data.filter(p => p.priority === 'pipeline').length;
   const totalBudget = data.reduce((s, p) => s + (p.budgetMin || 0), 0);
+  const hiddenBtn = document.getElementById('showHiddenBtn');
+  if (hiddenBtn) hiddenBtn.style.display = hiddenIds.size > 0 ? 'inline-block' : 'none';
+  if (hiddenBtn && hiddenIds.size > 0) {
+    hiddenBtn.textContent = showingHidden ? `👁 Hide dismissed (${hiddenIds.size})` : `👁 Show hidden (${hiddenIds.size})`;
+  }
   document.getElementById('statsBar').innerHTML = `
     <div class="stat-card red"><div class="num">${hot}</div><div class="lbl">🔴 Hot</div></div>
     <div class="stat-card orange"><div class="num">${watch}</div><div class="lbl">🟠 Watch</div></div>
@@ -1507,9 +1612,9 @@ function renderTable(data) {
         ${p.email ? `<button class="reach-btn" onclick="openOutreach(${p.id})">✉ Reach Out</button>` : `<button class="reach-btn no-email" title="No email on file — check CRM">✉ No email</button>`}
         <div style="margin-top:5px;display:flex;align-items:center;gap:6px;">
           <button class="star-btn ${isStarred ? 'starred' : ''}" onclick="toggleStar(${p.id})" title="Star" style="font-size:14px;">★</button>
-          ${dismissed.includes(p.id)
-            ? `<button onclick="restoreRow(${p.id})" style="font-size:10px;padding:2px 7px;border:1px solid #d1d5db;border-radius:4px;background:#f9fafb;color:#6b7280;cursor:pointer;" title="Restore row">↩ Restore</button>`
-            : `<button onclick="dismissRow(${p.id})" style="font-size:10px;padding:2px 7px;border:1px solid #d1d5db;border-radius:4px;background:#f9fafb;color:#6b7280;cursor:pointer;" title="Hide this opportunity">✕ Hide</button>`
+          ${!hiddenIds.has(p.id)
+            ? `<button onclick="hideProject(${p.id})" style="background:none;border:1px solid var(--border);border-radius:4px;font-size:10px;cursor:pointer;color:var(--text-dim);padding:2px 7px;margin-top:2px;white-space:nowrap;" onmouseover="this.style.color='var(--red)';this.style.borderColor='var(--red)'" onmouseout="this.style.color='var(--text-dim)';this.style.borderColor='var(--border)'">Hide opportunity</button>`
+            : `<button onclick="hideProject(${p.id})" style="background:none;border:1px solid var(--green);border-radius:4px;font-size:10px;cursor:pointer;color:var(--green);padding:2px 7px;margin-top:2px;white-space:nowrap;">↩ Restore</button>`
           }
         </div>
       </td>
@@ -1518,7 +1623,6 @@ function renderTable(data) {
   }).join('');
 
   renderStats(data);
-  populateAgencyFilter();
 }
 
 function applyFilters() {
@@ -1533,10 +1637,8 @@ function applyFilters() {
   const juniorFilter = document.getElementById('filterJunior').checked;
 
   let data = PROJECTS.filter(p => {
-    const isDismissed = dismissed.includes(p.id);
-    if (showDismissed === 'active' && isDismissed) return false;
-    if (showDismissed === 'hidden' && !isDismissed) return false;
-    // 'all' shows everything
+    if ((hiddenIds.has(p.id) || AUTO_HIDE_IDS.has(p.id)) && !showingHidden) return false;
+    if (!projectMatchesLane(p, activeLane)) return false;
     if (wnMode !== 'none' && !isWhatsNew(p)) return false;
     if (priority && p.priority !== priority) return false;
     if (status && p.status !== status) return false;
@@ -1634,18 +1736,14 @@ function clearFilters() {
   document.getElementById('myProjectsBtn').classList.remove('active');
   wnMode = 'none';
   ['wnNew','wnUpdated','wnHot'].forEach(id => document.getElementById(id)?.classList.remove('active'));
+  showingHidden = false;
   applyFilters();
 }
 
 function populateAgencyFilter() {
-  const agencies = [...new Set(PROJECTS.map(p => p.agency))].sort();
+  const agencies = [...new Set(PROJECTS.map(p => p.agency))].sort().filter(a => !CLIENT_AGENCIES.has(a));
   const sel = document.getElementById('filterAgency');
-  sel.innerHTML = '<option value="">All Agencies</option>';
   agencies.forEach(a => {
-    // hide agency if ALL its projects are dismissed
-    const agencyProjects = PROJECTS.filter(p => p.agency === a);
-    if (showDismissed !== 'hidden' && agencyProjects.every(p => dismissed.includes(p.id))) return;
-    if (showDismissed === 'hidden' && agencyProjects.every(p => !dismissed.includes(p.id))) return;
     const opt = document.createElement('option');
     opt.value = a; opt.textContent = a;
     sel.appendChild(opt);
@@ -1696,6 +1794,22 @@ function exportCSV() {
 }
 
 
+
+
+// ── Lane filter ──
+let activeLane = 'all';
+let laneSetByUser = false;
+
+function setLane(lane, auto = false) {
+  activeLane = lane;
+  laneSetByUser = !auto;
+  ['laneAll','laneWater','laneWW','laneEV'].forEach(id => document.getElementById(id)?.classList.remove('active'));
+  const chipMap = { all: 'laneAll', water: 'laneWater', wastewater: 'laneWW', systems: 'laneSystems', ev: 'laneEV' };
+  document.getElementById(chipMap[lane])?.classList.add('active');
+  const note = document.getElementById('laneAutoNote');
+  if (note) note.style.display = (auto && lane !== 'all') ? 'inline' : 'none';
+  applyFilters();
+}
 
 // ── What's New ──
 const NEW_PROJECT_IDS    = new Set([95112, 95123, 95124, 95126, 95129, 95132, 95137, 95138, 95145, 95151, 95152, 95153]);
@@ -1823,9 +1937,9 @@ spLoad(); // Load SharePoint data (no-op when SP_ENABLED = false)
       <h2>Find what matters to you</h2>
       <p>There are 328 projects — here's how to cut through them fast:</p>
       <ul class="step-list">
-        <li><div class="step-num">1</div><div>Filter <strong>Priority → 🔴 Hot</strong> to see RFPs that are imminent or dropping soon</div></li>
-        <li><div class="step-num">2</div><div>Filter <strong>Agency</strong> to focus on a specific client you already know</div></li>
-        <li><div class="step-num">3</div><div>Check <strong>🟣 Junior-friendly</strong> for smaller projects good for a younger engineer to own the relationship</div></li>
+        <li><div class="step-num">1</div><div>Pick your name above and the tracker <strong>automatically filters to your lane</strong> — Drinking Water, Wastewater, or all projects for Systems and Leadership</div></li>
+        <li><div class="step-num">2</div><div>Use the <strong>Business Lane</strong> chips to switch lanes manually anytime</div></li>
+        <li><div class="step-num">3</div><div>Filter <strong>Priority → 🔴 Hot</strong> to see RFPs dropping soon</div></li>
         <li><div class="step-num">4</div><div>Use <strong>Owner → Unassigned</strong> to see what's unclaimed and needs a home</div></li>
       </ul>
     </div>
